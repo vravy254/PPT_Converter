@@ -34,7 +34,6 @@ def upload_file():
             return jsonify(message="Error processing file", error=result.stderr), 500
         
         # Return the URL to download the processed file
-        # Shikhar Dang
         return jsonify(message="File processed successfully", file_url=f"/outputs/processed_{file.filename}"), 200
 
 @app.route('/outputs/<filename>', methods=['GET'])
